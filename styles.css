@@ -1,0 +1,589 @@
+/* Background */
+body {
+    background: #111111;
+    background-image: url(assets/xp.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+
+/* Invisible div */
+.invDiv {
+    background: rgba(0, 0, 0, 0);
+    width: 1035px;
+    height: 647px;
+    left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+    position: fixed;
+    opacity: 1;
+	animation: scaleIn 1s forwards;
+}
+@keyframes scaleIn {
+	from {
+        top: -512px;
+	}
+	to {
+	    top: 50%;
+	}
+}
+
+
+
+
+
+/* Info window */
+.infoWindow {
+    background: rgba(0, 0, 0, 0.50); 
+    width: 700px;
+    height: 477px;
+    left: 25px;
+	top: 25px;
+    position: absolute;
+    border-radius: 16px;
+    box-shadow: 0px 0px 16px 4px rgba(0, 0, 0, 0.25);
+    transition: 0.2s ease;
+}
+.infoWindow:hover {
+    box-shadow: 0px 0px 16px 4px rgba(0, 0, 0, 0.50);
+}
+.infoWindow::before {
+    content: "";
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    backdrop-filter: blur(16px);
+    z-index: -1;
+}
+
+
+
+/* Basic info box*/
+
+.basicInfoBox {
+    background: rgba(255, 255, 255, 0.02);
+    width: 652px;
+    height: 160px;
+    left: 24px;
+    top: 24px;
+    position: absolute;
+    border-radius: 16px;
+    transition: 0.1s ease;
+}
+.basicInfoBox:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+
+.pfp {
+    background-image: url(assets/pfp.png);
+    background-size: cover;
+    width: 160px;
+    height: 160px;
+    left: 0px;
+    top: 0px;
+    position: absolute;
+    border-radius: 16px;
+    box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.25);
+    transition: 0.3s ease;
+}
+.pfp:hover {
+    width: 176px;
+    height: 176px;
+    left: -8px;
+    top: -8px;
+    border-radius: 16px;
+}
+
+.nickname {
+    color: #FFF;
+    left: 190px;
+    top: 16px;
+    position: absolute;
+    font-family: Roboto;
+    font-weight: 900;
+    font-size: 48px;
+    cursor: default;
+    text-shadow: 0px 0px 16px rgba(0, 0, 0, 0.50); 
+}
+
+.argentina {
+    background-image: url(assets/argentina.svg);
+    width: 32px;
+    height: 32px;
+    right: 204px;
+    top: 33px;
+    position: absolute;
+}
+
+.age {
+    color: rgba(255, 255, 255, 0.75);
+    left: 192px;
+    bottom: 26px;
+    position: absolute;
+    font-family: Roboto;
+    font-weight: 500;
+    font-size: 24px;
+    cursor: default;
+}
+
+.catLink {
+    color: rgba(0, 0, 0, 0);
+    width: 75px;
+    height: 23px;
+    right: 210px;
+    bottom: 29px;
+    position: absolute;
+}
+
+
+
+/* Interested in box*/
+.interestedInBox {
+    background: rgba(255, 255, 255, 0.02);
+    width: 652px;
+    height: 245px;
+    left: 24px;
+    bottom: 24px;
+    position: absolute;
+    border-radius: 16px;
+    transition: 0.1s ease;
+}
+.interestedInBox:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.hardware {
+    color: rgba(255, 255, 255, 0.90);
+    left: 16px;
+    top: 14px;
+    position: absolute;
+    font-family: Roboto;
+    font-size: 24px;
+    font-weight: 500;
+    cursor: default;
+}
+
+.divider {
+    background: rgba(255, 255, 255, 0.25);
+    width: 620px;
+    height: 2px;
+    left: 16px;
+    bottom: 93px;
+    position: absolute;
+    border-radius: 1px;
+}
+
+.software {
+    color: rgba(255, 255, 255, 0.90);
+    left: 16px;
+    top: 171px;
+    position: absolute;
+    font-family: Roboto;
+    font-size: 24px;
+    font-weight: 500;
+    cursor: default;
+}
+
+
+
+
+
+
+/* Hardware window */
+
+.hardwareWindow {
+    background: rgba(0, 0, 0, 0.50); 
+    width: 261px;
+    height: 597px;
+    right: 25px;
+	top: 25px;
+    position: absolute;
+    border-radius: 16px;
+    box-shadow: 0px 0px 16px 4px rgba(0, 0, 0, 0.25);
+    transition: 0.2s ease;
+}
+.hardwareWindow:hover {
+    box-shadow: 0px 0px 16px 4px rgba(0, 0, 0, 0.50);
+}
+.hardwareWindow::before {
+    content: "";
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    backdrop-filter: blur(16px);
+    z-index: -1;
+}
+
+
+/* PC Box*/
+.hardwarePCbox {
+    background: rgba(255, 255, 255, 0.02);
+    width: 213px;
+    height: 202px;
+    left: 24px;
+    top: 24px;
+    position: absolute;
+    border-radius: 8px;
+    transition: 0.1s ease;
+}
+.hardwarePCbox:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.hardwarePCicon {
+    background-image: url(assets/pc.svg);
+    width: 32px;
+    height: 32px;
+    left: 11px;
+    top: 15px;
+    position: absolute;
+}
+
+.hardwarePCtitle {
+    color: rgba(255, 255, 255, 0.90);
+    left: 51px;
+    top: 17px;
+    position: absolute;
+    font-family: Roboto;
+    font-weight: 700;
+    font-size: 24px;
+    cursor: default;
+    user-select: none;
+}
+
+.hardwarePCstuff {
+    color: rgba(255, 255, 255, 0.75);
+    left: 16px;
+    top: 57px;
+    position: absolute;
+    font-family: Roboto;
+    font-weight: 500;
+    font-size: 16px;
+    cursor: default;
+}
+
+.hardwarePCspecs {
+    color: rgba(255, 255, 255, 0.50);
+    left: 58px;
+    top: 57px;
+    position: absolute;
+    font-family: Roboto;
+    font-weight: 500;
+    font-size: 16px;
+    cursor: default;
+}
+
+
+
+/* Phone Box*/
+.hardwarePhoneBox {
+    background: rgba(255, 255, 255, 0.02);
+    width: 213px;
+    height: 202px;
+    right: 24px;
+    bottom: 145px;
+    position: absolute;
+    border-radius: 8px;
+    transition: 0.1s ease;
+}
+.hardwarePhoneBox:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.hardwarePhoneIcon {
+    background-image: url(assets/phone.svg);
+    width: 32px;
+    height: 32px;
+    left: 11px;
+    top: 15px;
+    position: absolute;
+}
+
+.hardwarePhoneTitle {
+    color: rgba(255, 255, 255, 0.90);
+    left: 51px;
+    top: 17px;
+    position: absolute;
+    font-family: Roboto;
+    font-weight: 700;
+    font-size: 24px;
+    cursor: default;
+    user-select: none;
+}
+
+.hardwarePhoneStuff {
+    color: rgba(255, 255, 255, 0.75);
+    left: 16px;
+    top: 57px;
+    position: absolute;
+    font-family: Roboto;
+    font-weight: 500;
+    font-size: 16px;
+    cursor: default;
+}
+
+.hardwarePhoneSpecs {
+    color: rgba(255, 255, 255, 0.50);
+    left: 58px;
+    top: 95px;
+    position: absolute;
+    font-family: Roboto;
+    font-weight: 500;
+    font-size: 16px;
+    cursor: default;
+}
+
+.hardwarePhoneLink {
+    color: rgba(0, 0, 0, 0);
+    width: 61px;
+    height: 18px;
+    left: 18px;
+    top: 58px;
+    position: absolute;
+}
+
+
+
+/* Other hardware box */
+.hardwareOtherBox {
+    background: rgba(255, 255, 255, 0.02);
+    width: 213px;
+    height: 97px;
+    right: 24px;
+    bottom: 24px;
+    position: absolute;
+    border-radius: 8px;
+    transition: 0.1s ease;
+}
+.hardwareOtherBox:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.hardwareOtherRN7icon {
+    color: rgba(255, 255, 255, 0.75);
+    background-image: url(assets/rn7.svg);
+    width: 24px;
+    height: 24px;
+    left: 16px;
+    top: 16px;
+    position: absolute;
+}
+
+.hardwareOtherRN7text {
+    color: rgba(255, 255, 255, 0.75);
+    left: 55px;
+    top: 18px;
+    position: absolute;
+    font-family: Roboto;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.hardwareOtherRN7link {
+    color: rgba(0, 0, 0, 0);
+    width: 213px;
+    height: 48px;
+    left: 0px;
+    top: 0px;
+    position: absolute;
+}
+
+.hardwareOtherHPicon {
+    color: rgba(255, 255, 255, 0.75);
+    background-image: url(assets/hp.svg);
+    width: 24px;
+    height: 24px;
+    left: 16px;
+    bottom: 16px;
+    position: absolute;
+}
+
+.hardwareOtherHPtext {
+    color: rgba(255, 255, 255, 0.75);
+    left: 55px;
+    bottom: 16px;
+    position: absolute;
+    font-family: Roboto;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.hardwareOtherHPlink {
+    color: rgba(0, 0, 0, 0);
+    width: 213px;
+    height: 48px;
+    left: 0px;
+    bottom: 0px;
+    position: absolute;
+}
+
+
+
+
+
+
+/* Social window */
+
+.socialWindow {
+    background: rgba(0, 0, 0, 0.50); 
+    width: 700px;
+    height: 96px;
+    left: 25px;
+	bottom: 25px;
+    position: absolute;
+    border-radius: 16px;
+    box-shadow: 0px 0px 16px 4px rgba(0, 0, 0, 0.25);
+    transition: 0.2s ease;
+}
+.socialWindow:hover {
+    box-shadow: 0px 0px 16px 4px rgba(0, 0, 0, 0.50);
+}
+.socialWindow::before {
+    content: "";
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    backdrop-filter: blur(16px);
+    z-index: -1;
+}
+
+
+
+/* Projects */
+.projectsButton {
+    background: rgba(255, 255, 255, 0.02);
+    width: 160px;
+    height: 48px;
+    left: 24px;
+    top: 24px;
+    position: absolute;
+    border-radius: 8px;
+    transition: 0.2s ease;
+}
+.projectsButton:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+.projectsIcon {
+    background-image: url(assets/projects.svg);
+    width: 28px;
+    height: 28px;
+    left: 10px;
+    top: 10px;
+    position: absolute;
+}
+.projectsText {
+    color: #FFF;
+    left: 51px;
+    top: 14px;
+    position: absolute;
+    font-family: Roboto;
+    font-size: 18px;
+    font-weight: 500;
+    user-select: none;
+}
+
+
+
+/* Steam */
+
+.steamButton {
+    background: rgba(255, 255, 255, 0.02);
+    width: 48px;
+    height: 48px;
+    right: 204px;
+    bottom: 24px;
+    position: absolute;
+    border-radius: 8px;
+    transition: 0.2s ease;
+}
+.steamButton:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+.steamIcon {
+    background-image: url(assets/steam.svg);
+    width: 34px;
+    height: 34px;
+    right: 5px;
+    top: 7px;
+    position: absolute;
+}
+
+/* Twitter */
+
+.twitterButton {
+    background: rgba(255, 255, 255, 0.02);
+    width: 48px;
+    height: 48px;
+    right: 144px;
+    bottom: 24px;
+    position: absolute;
+    border-radius: 8px;
+    transition: 0.2s ease;
+}
+.twitterButton:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+.twitterIcon {
+    background-image: url(assets/twitter.svg);
+    width: 28px;
+    height: 23px;
+    right: 10px;
+    bottom: 12px;
+    position: absolute;
+}
+
+/* Discord */
+
+.discordButton {
+    background: rgba(255, 255, 255, 0.02);
+    width: 48px;
+    height: 48px;
+    right: 84px;
+    bottom: 24px;
+    position: absolute;
+    border-radius: 8px;
+    transition: 0.2s ease;
+}
+.discordButton:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+.discordIcon {
+    background-image: url(assets/discord.svg);
+    width: 28px;
+    height: 28px;
+    right: 10px;
+    top: 10px;
+    position: absolute;
+}
+
+/* YouTube */
+
+.youtubeButton {
+    background: rgba(255, 255, 255, 0.02);
+    width: 48px;
+    height: 48px;
+    right: 24px;
+    bottom: 24px;
+    position: absolute;
+    border-radius: 8px;
+    transition: 0.2s ease;
+}
+.youtubeButton:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+.youtubeIcon {
+    background-image: url(assets/youtube.svg);
+    width: 28px;
+    height: 20px;
+    right: 10px;
+    top: 14px;
+    position: absolute;
+}
