@@ -1,0 +1,311 @@
+body {
+    background: #111111;
+    background-image: url(placeholder.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+    border: none;
+    font-family: Roboto;
+    display: flex;
+    justify-content: center;
+}
+
+
+
+/* ------------------------------------- Clock - Weather ------------------------------------- */
+
+/* Container */
+.clock-container {
+    background: transparent;
+    width: 51.25vh;
+    height: 27.75vh;
+    left: 17.5vh;
+    transform: translateX(-0%);
+    top: 17.5vh;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    transition: 0.3s ease;
+}
+
+/* Clock */
+.clock {
+    color: rgba(230, 230, 230, 255);
+    background: transparent;
+    width: 100%;
+    position: absolute;
+    text-align: center;
+    font-size: 14vh;
+    font-weight: 700;
+    cursor: default;
+    text-shadow: 0px 0px 16px rgba(0, 0, 0, 0.25);
+    transition: 0.2s ease;
+}
+.clock:hover {
+    color: rgba(255, 255, 255, 255);
+}
+.clock::selection {
+    background-color: rgba(180, 180, 180, 255);
+    color: #000;
+}
+
+/* Weather */
+.weather {
+    top: 15vh;
+    color: rgba(190, 190, 190, 255);
+    position: absolute;
+    text-align: center;
+    font-size: 3vh;
+    font-weight: 500;
+    cursor: default;
+    text-shadow: 0px 0px 16px rgba(0, 0, 0, 0.5);
+    transition: 0.2s ease;
+    background-image: url(icons/weather/clear.svg); /* This shows while the JS gets the response from OpenMeteo*/
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: 3vh;
+    position: absolute;
+}
+.weather:hover {
+    filter: brightness(120%); /* I use Brightness so it lights up the icon too */
+}
+.weather::selection {
+    background-color: rgba(180, 180, 180, 255);
+    color: #000;
+}
+
+
+
+
+
+
+/* ------------------------------------- Buttons ------------------------------------- */
+
+/* Container */
+.button-container {
+    background: transparent;
+    width: 51.25vh;
+    height: 27.75vh;
+    left: 17.5vh;
+    transform: translateX(-0%);
+    bottom: 17.5vh;
+    position: absolute;
+    transition: 0.3s ease;
+}
+
+/* Commons */
+.button-common {
+    background: rgba(0, 0, 0, 0.15);
+    width: 16vh;
+    height: 13vh;
+    position: absolute;
+    border-radius: 6px;
+    backdrop-filter: blur(16px);
+    box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.25);
+    transition: 0.05s ease;
+}
+.button-common:hover {
+    background: rgba(0, 0, 0, 0.15);
+    height: 13.5vh;
+}
+.button-common:active {
+    background: rgba(0, 0, 0, 0.3);
+    height: 13vh;
+}
+.button-in-common {
+    background: rgba(0, 0, 0, 0.15);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 5vh;
+    width: 16vh;
+    height: 13vh;
+    border-radius: 6px;
+}
+
+
+
+/* Actual buttons */
+.button-tl {
+    left: 0vh;
+    bottom: 14.75vh;
+}
+.button-in-tl {
+    background-image: url(icons/github.svg)
+}
+
+.button-tm {
+    left: 17.75vh;
+    bottom: 14.75vh;
+}
+.button-in-tm {
+    background-image: url(icons/music.svg)
+}
+
+.button-tr {
+    left: 35.25vh;
+    bottom: 14.75vh;
+}
+.button-in-tr {
+    background-image: url(icons/figma.svg)
+}
+
+.button-bl {
+    left: 0vh;
+    bottom: 0px;
+}
+.button-in-bl {
+    background-image: url(icons/youtube.svg);
+}
+
+.button-bm {
+    left: 17.75vh;
+    bottom: 0vh;
+}
+.button-in-bm {
+    background-image: url(icons/message.svg)
+}
+
+.button-br {
+    left: 35.25vh;
+    bottom: 0vh;
+}
+.button-in-br {
+    background-image: url(icons/mail.svg)
+}
+
+
+
+
+
+
+/* ------------------------------------- Lists ------------------------------------- */
+
+/* Container */
+.list-container {
+    background: transparent;
+    width: 51.25vh;
+    height: 27.75vh;
+    right: 17.5vh;
+    bottom: 17.5vh;
+    position: absolute;
+    transition: 0.3s ease;
+}
+
+/* Commons */
+.list-common {
+    background: rgba(0, 0, 0, 0.15);
+    width: 24.875vh;
+    height: 27.75vh;
+    bottom: 0px;
+    position: absolute;
+    border-radius: 6px;
+    backdrop-filter: blur(16px);
+    box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.25);
+    transition: 0.05s ease;
+}
+.list-common:hover {
+    background: rgba(0, 0, 0, 0.15);
+    height: 28.25vh;
+}
+.list-in-common {
+    background: rgba(0, 0, 0, 0.15);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-position-y: 1.66vh;
+    background-size: 3.33vh;
+    background-image: url(icons/code.svg);
+    width: 24.875vh;
+    height: 27.75vh;
+    position: absolute;
+    border-radius: 6px;
+    display: flex;
+    justify-content: center;
+}
+
+
+
+/* ToDo */
+.todo {
+    left: 0px;
+}
+.todo-in {
+    background-image: url(icons/text.svg);
+}
+.todo-textarea {
+    color: rgba(210, 210, 210, 255);
+    background: transparent;
+    width: 21vh;
+    height: 20vh;
+    top: 5.9vh;
+    position: absolute;
+    font-family: Roboto;
+    font-size: 1.85vh;
+    font-weight: 500;
+    resize: none;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    scrollbar-width: none;
+    scrollbar-color: rgb(128, 128, 128) transparent;
+    align-items: center;
+    justify-content: center;
+}
+.todo-textarea:hover {
+    scrollbar-width: thin;
+    scrollbar-color: rgb(128, 128, 128) transparent;
+}
+.todo-textarea::selection {
+    background-color: rgba(210, 210, 210, 255);
+    color: #000;
+}
+
+
+
+/* Link list */
+.links {
+    right: 0px;
+}
+.link-common {
+    color: rgba(210, 210, 210, 255);
+    background: transparent;
+    height: 3vh;
+    width: 20vh;
+    position: absolute;
+    font-size: 2vh;
+    font-weight: 500;
+    text-align: center;
+    border-radius: 3px;
+    user-select: none;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.1s ease;
+}
+.link-common:hover {
+    background: rgba(255, 255, 255, 0.02);
+    box-shadow: 0px 0px 4px 4px rgba(0, 0, 0, 0.05);
+}
+.link-common:active {
+    background: rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 0px 4px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Links */
+.link1 {
+    top: 6.5vh;
+}
+.link2 {
+    top: 10.5vh;
+}
+.link3 {
+    top: 14.5vh;
+}
+.link4 {
+    top: 18.5vh;
+}
+.link5 {
+    top: 22.5vh;
+}
