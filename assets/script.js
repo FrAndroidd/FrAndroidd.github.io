@@ -41,5 +41,7 @@ wallpaperList = ["AdamBerkecz-Unsplash.jpg", "CloudyXP-Unknown.png", "GiulioFabi
 document.getElementById("background").src = "assets/backgrounds/" + wallpaperList[Math.floor(Math.random() * wallpaperList.length)]
 
 document.getElementById("background").addEventListener("load", () => {
-    document.getElementById("container").style.display = "flex"
+    setTimeout(function() {
+        document.getElementById("container").style.display = "flex"
+    }, 500)
 })
