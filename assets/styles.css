@@ -1,0 +1,190 @@
+body {
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+
+    color: #FFF;
+    font-family: Roboto;
+    user-select: none;
+}
+
+
+@keyframes scale {
+    from {
+        transform: translate(-50%, -50%) scale(2);
+    }
+}
+@keyframes blur {
+    from {
+        filter: blur(8px);
+        opacity: 0;
+    }
+}
+@keyframes normalize {
+    from {
+        backdrop-filter: blur(0);
+        box-shadow: none;
+    }
+}
+
+
+#background {
+    background-color: #000;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    
+    border-radius: 0;
+    filter: none;
+}
+
+
+#container {
+    display: none;
+    width: 597px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-wrap: wrap;
+    animation: scale 0.5s cubic-bezier(.19,.62,.17,.99);
+}
+.box {
+    background-color: #0005;
+    margin: 8px;
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px 0 #0007;
+    backdrop-filter: blur(16px);
+    animation: normalize 0.4s cubic-bezier(.19,.62,.17,.99);
+}
+.box > * {
+    animation: blur 0.5s cubic-bezier(.19,.62,.17,.99);
+}
+
+img {
+    border-radius: 8px;
+    filter: drop-shadow(0 4px 8px #0004);
+}
+span {
+    font-size: 20px;
+    text-shadow: 0 4px 4px #0003;
+}
+hr {
+    border-width: 0;
+    height: 2px;
+    margin: 16px 0 16px 0;
+    background-color: #999;
+}
+
+#imageOverlay {
+    background-image: url("https://avatars.githubusercontent.com/u/70262448");
+    background-color: #0008;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    position: absolute;
+    transition: 0.1s ease;
+}
+
+/* Personal */
+.personal {
+    display: flex;
+    flex-grow: 1;
+}
+.social {
+    width: 170px;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.bio {
+    width: 100%;
+}
+.bio > span {
+    user-select: text;
+    color: #EEE;
+}
+.bio > span::selection {
+    background-color: #999;
+    color: #000;
+}
+
+
+#profilePicture {
+    margin-right: 16px;
+    cursor: pointer;
+    filter: brightness(100%);
+    box-shadow: 0 4px 4px 0 #0004;
+    transition: 0.1s ease, box-shadow 0s;
+    animation: blur 0.75s cubic-bezier(.19,.62,.17,.99);
+}
+#profilePicture:hover {
+    filter: brightness(66%);
+    box-shadow: 0 4px 6px 0 #0005;
+    scale: 1.1;
+}
+
+#status {
+    background-color: #0000;
+    width: 12px;
+    height: 12px;
+    margin-left: 10px;
+    margin-top: 24px;
+    border-radius: 6px;
+    box-shadow: 0 4px 4px 0 #0003;
+}
+
+.button {
+    display: flex;
+    color: #FFF;
+    background-color: #FFF2;
+    width: 50px;
+    height: 50px;
+    margin: 6px;
+    border-radius: 8px;
+    box-shadow: 0 4px 4px 0 #0003;
+    transition: 0.1s ease;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+.button:hover {
+    background-color: #FFF3;
+}
+.button > img {
+    filter: drop-shadow(0 4px 4px #0002);
+    border-radius: 0;
+}
+
+
+
+@media (orientation: portrait) {
+    #container {
+        width: 100%;
+    }
+
+    .social {
+        width: 100%;
+    }
+    [title="GitHub | @FrAndroidd"] {
+        order: -1;
+    }
+    [title="Discord | @frandroidd"] {
+        order: -2;
+    }
+}
+
+@media (max-width: 374px) and (orientation: portrait) {
+    #status {
+        display: none;
+    }
+    .location {
+        font-size: 18px;
+    }
+}
