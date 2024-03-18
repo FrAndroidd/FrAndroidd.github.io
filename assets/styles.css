@@ -164,28 +164,51 @@ hr {
 }
 
 
-#backgroundCredits {
-    display: none;
-    padding: 6px 12px;
-    box-shadow: 0 4px 4px 0 #0003;
+
+#miniContainer {
+    display: flex;
+    gap: 8px;
     position: absolute;
     bottom: 8px;
     left: 8px;
+}
+#miniContainer > * {
+    box-shadow: 0 4px 4px 0 #0003;
     white-space: nowrap;
     transition: 0.1s ease;
     animation: bgNormalize 0.4s cubic-bezier(.19,.62,.17,.99);
 }
-#backgroundCredits > * {
+
+.language {
+    display: flex;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+}
+.language > * {
+    opacity: 0.75;
+    scale: 0.85;
+    cursor: pointer;
+    transition: 0.1s ease;
+    filter: drop-shadow(0 4px 2px #0005);
+}
+.language > *:hover {
+    opacity: 1;
+}
+
+.backgroundCredits > * {
     color: #AAA;
     font-size: 16px;
     animation: none;
     text-decoration: none;
     animation: bgNormalize 0.4s cubic-bezier(.19,.62,.17,.99);
 }
-#backgroundCredits > [href] {
+.backgroundCredits > [href] {
     color: #CCC;
 }
-#backgroundCredits > [href]:hover {
+.backgroundCredits > [href]:hover {
     color: #FFF;
 }
 
@@ -208,6 +231,9 @@ hr {
     .social {
         width: 100%;
     }
+    .personal {
+        width: 100%;
+    }
     [title="GitHub | @FrAndroidd"] {
         order: -1;
     }
@@ -215,7 +241,7 @@ hr {
         order: -2;
     }
 
-    #backgroundCredits {
+    #miniContainer {
         left: 50%;
         transform: translateX(-50%);
     }
@@ -227,5 +253,9 @@ hr {
     }
     .location {
         font-size: 18px;
+        white-space: nowrap;
+    }
+    [id="lang.backgroundBy"] { /* Yes... */
+        display: none;
     }
 }

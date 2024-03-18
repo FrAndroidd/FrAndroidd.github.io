@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <title>FrAndroid</title>
     <link rel="stylesheet" href="assets/styles.css">
@@ -18,13 +18,13 @@
 
     <div id="container" style="display: none;">
         <div class="box personal">
-            <img src="https://avatars.githubusercontent.com/u/70262448" alt="Foto de perfil" width="112px" height="112px" id="profilePicture" draggable="false" onclick="expandProfilePicture()">
+            <img src="https://avatars.githubusercontent.com/u/70262448" width="112px" height="112px" id="profilePicture" draggable="false" onclick="expandProfilePicture()">
             <div>
                 <div style="display: flex">
                     <span style="font-weight: 900; font-size: 38px">FrAndroid</span>
                     <div id="status"></div>
                 </div>
-                <span style="color: #FFFB">17 años</span>
+                <span style="color: #FFFB" id="lang.age">17 años</span>
                 <div style="display: flex; margin-top: 18px">
                     <img src="assets/icons/location.svg" draggable="false" style="opacity: 0.75; margin-right: 4px; filter: drop-shadow(0 4px 2px #0005)">
                     <span class="location" style="color: #FFFB">Córdoba, Argentina</span>
@@ -45,23 +45,24 @@
             </a>
         </div>
         <div class="box bio">
-            <span>
-                Hola, soy FrAndroid, un aficionado al software, programador principiante y diseñador de UI/UX como hobby
-            </span>
+            <span id="lang.bio1"></span>
             <br><hr>
-            <span style="color: #DDD;">
-                Actualmente tengo conocimientos relativamente avanzados sobre Windows y Linux
-                <br><br>
-                Sé HTML y CSS, programar en Batch y JavaScript, y estoy aprendiendo otros lenguajes
-            </span>
+            <span style="color: #DDD;" id="lang.bio2"></span>
+            <br><br>
+            <span style="color: #DDD;" id="lang.bio3"></span>
         </div>
     </div>
 
-    <div class="box" id="backgroundCredits">
-        <span>Fondo por</span>
-        <a id="backgroundLink"></a>
-        <span>en</span>
-        <a id="unsplashLink">Unsplash</a>
+    <div id="miniContainer">
+        <div class="box language" onclick="language()">
+            <img src="assets/icons/language.svg">
+        </div>
+        <div class="box backgroundCredits" style="padding: 6px 12px">
+            <span id="lang.backgroundBy"></span>
+            <a id="backgroundLink"></a>
+            <span id="lang.backgroundAt"></span>
+            <a id="unsplashLink">Unsplash</a>
+        </div>
     </div>
 
     <div id="imageOverlay" onclick="expandProfilePicture()" style="opacity: 0; display: none;"></div>
