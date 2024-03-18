@@ -166,7 +166,7 @@ hr {
 
 
 #miniContainer {
-    display: flex;
+    display: none;
     gap: 8px;
     position: absolute;
     bottom: 8px;
