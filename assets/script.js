@@ -31,37 +31,37 @@ function expandProfilePicture() {
 
 // Background randomizer
 backgroundList = [
-    "AdamBerkecz-Unsplash.jpg",
-    "AnanduVinod-Unsplash.jpg",
-    "AndreaDeSantis-Unsplash.jpg",
-    "AnnieSpratt-Unsplash.jpg",
-    "AntonieBarres-Unsplash.jpg",
-    "CloudyXP-Unknown.png",
-    "DavideZeri-Unsplash.jpg",
-    "EberhardGrossgasteiger-Unsplash.jpg",
-    "FabrizioConti-Unsplash-1.jpg",
-    "FabrizioConti-Unsplash-2.jpg",
-    "GiulioFabi-Unsplash.jpg",
-    "KevinLien-Unsplash.jpg",
-    "KikiSiepel-Unsplash.jpg",
-    "MaksymIvanchenko-Unsplash.jpg",
-    "NicholasKampouris-Unsplash.jpg",
-    "PatrickCrosby-Unsplash.jpg",
-    "RaimondKlavins-Unsplash.jpg",
-    "SamuelFerrara-Unsplash.jpg",
-    "StijnTeStrake-Unsplash.jpg",
-    "v2osk-Unsplash.jpg"
+    "AdamBerkecz.jpg",
+    "AnanduVinod.jpg",
+    "AndreaDeSantis.jpg",
+    "AnnieSpratt.jpg",
+    "AntonieBarres.jpg",
+    "DavideZeri.jpg",
+    "EberhardGrossgasteiger.jpg",
+    "FabrizioConti.jpg",
+    "GiulioFabi.jpg",
+    "KevinLien.jpg",
+    "KikiSiepel.jpg",
+    "MaksymIvanchenko.jpg",
+    "NicholasKampouris.jpg",
+    "PatrickCrosby.jpg",
+    "RaimondKlavins.jpg",
+    "SamuelFerrara.jpg",
+    "StijnTeStrake.jpg",
+    "v2osk.jpg"
 ]
 
 function randomBackground() {
     selectedBackground = backgroundList[Math.floor(Math.random() * backgroundList.length)]
     document.getElementById("background").src = "assets/backgrounds/" + selectedBackground
-    console.log("Background credits: " + selectedBackground.slice(0, -4))
+    document.getElementById("backgroundLink").href = "assets/backgrounds/" + selectedBackground
+    document.getElementById("backgroundLink").innerText = selectedBackground.slice(0,-4).replace(/([A-Z])/g, " $1").trim()
 }
 randomBackground()
 
 function show() { // This is run when the background is loaded
     setTimeout(function() {
         document.getElementById("container").style.display = "flex"
+        document.getElementById("backgroundCredits").style.display = "block"
     }, 500)
 }

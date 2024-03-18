@@ -44,10 +44,11 @@ body {
 
 #container {
     display: none;
-    width: 597px;
+    width: 600px;
     position: absolute;
     top: 50%;
     left: 50%;
+    gap: 16px;
     transform: translate(-50%, -50%);
     display: flex;
     flex-wrap: wrap;
@@ -55,10 +56,10 @@ body {
 }
 .box {
     background-color: #0005;
-    margin: 8px;
     padding: 16px;
     border-radius: 8px;
     box-shadow: 0 4px 10px 0 #0007;
+    box-sizing: border-box;
     backdrop-filter: blur(16px);
     animation: normalize 0.4s cubic-bezier(.19,.62,.17,.99);
 }
@@ -99,8 +100,8 @@ hr {
     flex-grow: 1;
 }
 .social {
-    width: 170px;
-    padding: 10px;
+    width: 190px;
+    gap: 12px;
     display: flex;
     flex-wrap: wrap;
 }
@@ -147,7 +148,6 @@ hr {
     background-color: #FFF2;
     width: 50px;
     height: 50px;
-    margin: 6px;
     border-radius: 8px;
     box-shadow: 0 4px 4px 0 #0003;
     transition: 0.1s ease;
@@ -161,6 +161,40 @@ hr {
 .button > img {
     filter: drop-shadow(0 4px 4px #0002);
     border-radius: 0;
+}
+
+
+#backgroundCredits {
+    display: none;
+    padding: 6px 12px;
+    box-shadow: 0 4px 4px 0 #0003;
+    position: absolute;
+    bottom: 8px;
+    left: 8px;
+    animation: bgNormalize 0.4s cubic-bezier(.19,.62,.17,.99);
+    transition: 0.1s ease;
+}
+#backgroundCredits > * {
+    color: #AAA;
+    font-size: 16px;
+    animation: none;
+    text-decoration: none;
+    animation: bgNormalize 0.4s cubic-bezier(.19,.62,.17,.99);
+}
+#backgroundCredits > [href] {
+    color: #CCC;
+}
+#backgroundCredits > [href]:hover {
+    color: #FFF;
+}
+
+@keyframes bgNormalize {
+    from {
+        box-shadow: #0000;
+        filter: blur(0px);
+        color: #AAA0;
+        background-color: #0000;
+    }
 }
 
 
