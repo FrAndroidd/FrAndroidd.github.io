@@ -22,6 +22,7 @@ body {
 }
 @keyframes normalize {
     from {
+        background-color: #0000;
         backdrop-filter: blur(0);
         box-shadow: none;
     }
