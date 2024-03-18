@@ -31,23 +31,23 @@ function expandProfilePicture() {
 
 // Background randomizer
 backgroundList = [
-    "AdamBerkecz.jpg",
-    "AnanduVinod.jpg",
-    "AndreaDeSantis.jpg",
-    "AnnieSpratt.jpg",
-    "AntonieBarres.jpg",
-    "DavideZeri.jpg",
-    "EberhardGrossgasteiger.jpg",
-    "FabrizioConti.jpg",
-    "GiulioFabi.jpg",
-    "KevinLien.jpg",
-    "KikiSiepel.jpg",
-    "MaksymIvanchenko.jpg",
-    "NicholasKampouris.jpg",
-    "PatrickCrosby.jpg",
-    "RaimondKlavins.jpg",
-    "SamuelFerrara.jpg",
-    "StijnTeStrake.jpg",
+    "adamBerkecz.jpg",
+    "ananduVinod.jpg",
+    "andreaDeSantis.jpg",
+    "annieSpratt.jpg",
+    "antoineBarres.jpg",
+    "davideZeri.jpg",
+    "eberhardGrossgasteiger.jpg",
+    "fabrizioConti.jpg",
+    "giulioFabi.jpg",
+    "kevinLien.jpg",
+    "kikiSiepel.jpg",
+    "maksymIvanchenko.jpg",
+    "nicholasKampouris.jpg",
+    "patrickCrosby.jpg",
+    "raimondKlavins.jpg",
+    "samuelFerrara.jpg",
+    "stijnTeStrake.jpg",
     "v2osk.jpg"
 ]
 
@@ -56,6 +56,7 @@ function randomBackground() {
     document.getElementById("background").src = "assets/backgrounds/" + selectedBackground
     document.getElementById("backgroundLink").href = "assets/backgrounds/" + selectedBackground
     document.getElementById("backgroundLink").innerText = selectedBackground.slice(0,-4).replace(/([A-Z])/g, " $1").trim()
+    document.getElementById("unsplashLink").href = "https://unsplash.com/s/users/" + selectedBackground.slice(0,-4).replace(/([A-Z])/g, "-$1").trim()
 }
 randomBackground()
 
