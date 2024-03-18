@@ -171,8 +171,9 @@ hr {
     position: absolute;
     bottom: 8px;
     left: 8px;
-    animation: bgNormalize 0.4s cubic-bezier(.19,.62,.17,.99);
+    white-space: nowrap;
     transition: 0.1s ease;
+    animation: bgNormalize 0.4s cubic-bezier(.19,.62,.17,.99);
 }
 #backgroundCredits > * {
     color: #AAA;
@@ -201,7 +202,7 @@ hr {
 
 @media (orientation: portrait) {
     #container {
-        width: 100%;
+        width: calc(100% - 16px);
     }
 
     .social {
@@ -212,6 +213,11 @@ hr {
     }
     [title="Discord | @frandroidd"] {
         order: -2;
+    }
+
+    #backgroundCredits {
+        left: 50%;
+        transform: translateX(-50%);
     }
 }
 
