@@ -30,7 +30,7 @@ function expandProfilePicture() {
 
 
 // Background randomizer
-backgroundList = [
+const backgroundList = [
     "AdamBerkecz.jpg",
     "AnanduVinod.jpg",
     "AndreaDeSantis.jpg",
@@ -53,9 +53,8 @@ backgroundList = [
 function randomBackground() {
     selectedBackground = backgroundList[Math.floor(Math.random() * backgroundList.length)]
     document.getElementById("background").src = "assets/backgrounds/" + selectedBackground
-    document.getElementById("backgroundLink").href = "assets/backgrounds/" + selectedBackground
-    document.getElementById("backgroundLink").innerText = selectedBackground.slice(0,-4).replace(/([A-Z])/g, " $1").trim()
-    document.getElementById("unsplashLink").href = "https://unsplash.com/s/users/" + selectedBackground.replace(/([A-Z])/g, "-$1").trim().slice(1,-4)
+    document.getElementById("backgroundLink").href = "https://unsplash.com/s/users/" + selectedBackground.replace(/([A-Z])/g, "-$1").trim().slice(1,-4)
+    document.getElementById("backgroundLink").innerText = selectedBackground.slice(0,-4).replace(/([A-Z])/g, " $1").trim() + " @ Unsplash"
 }
 randomBackground()
 
@@ -69,43 +68,58 @@ function show() { // This is run when the background is loaded
 
 
 // Change language
-languageText = {
+const languageText = {
     "es": {
         "lang.age": "17 años",
         "lang.bio1": "Hola, soy FrAndroid, un aficionado al software, programador principiante y diseñador de UI/UX como hobby",
         "lang.bio2": "Actualmente tengo conocimientos relativamente avanzados sobre Windows y Linux",
         "lang.bio3": "Sé HTML y CSS, programar en Batch y JavaScript, y estoy aprendiendo otros lenguajes",
-        "lang.backgroundBy": "Fondo por",
-        "lang.backgroundAt": "en"
+        "lang.backgroundBy": "Fondo por"
     },
     "en": {
         "lang.age": "17 years old",
         "lang.bio1": "Hi, I'm FrAndroid, a software enthusiast, beginner programmer and UI/UX designer as a hobby",
         "lang.bio2": "I currently have a somewhat advanced knowledge about Windows and Linux",
         "lang.bio3": "I know HTML and CSS, coding in Batch and JavaScript, and I'm learning other programming languages",
-        "lang.backgroundBy": "Background by",
-        "lang.backgroundAt": "@"
+        "lang.backgroundBy": "Background by"
+    }
+}
+const languageTextLength = Object.keys(languageText.es).length - 1
+
+const userLanguage = navigator.language.slice(0, 2)
+if (userLanguage == "es") {
+    setLanguage("es")
+} else {
+    setLanguage("en")
+}
+
+function setLanguage(targetLanguage) {
+    for (let i = 0; i <= languageTextLength; i++) {
+        document.getElementById(Object.keys(languageText[targetLanguage])[i]).textContent = Object.values(languageText[targetLanguage])[i]
+    }
+    if (targetLanguage == "es") {
+        document.getElementById("languageButton").onclick = function() {setLanguage('en')};
+    } else {
+        document.getElementById("languageButton").onclick = function() {setLanguage('es')};
     }
 }
 
-userLanguage = navigator.language.slice(0, 2)
-switchLanguage = 0
 
-function language() {
-    if (switchLanguage === 1) {
-        if (userLanguage === "es") {
-            userLanguage = "en"
-        } else {
-            userLanguage = "es"
-        }
-    }
-    for (let i = 0; i <= Object.keys(languageText.es).length-1; i++) {
-        if (userLanguage === "es") {
-            document.getElementById(Object.keys(languageText.es)[i]).textContent = Object.values(languageText.es)[i]
-        } else {
-            document.getElementById(Object.keys(languageText.en)[i]).textContent = Object.values(languageText.en)[i]
-        }
-    }
-    switchLanguage = 1
-}
-language()
+
+//function language() {
+//    if (switchLanguage === 1) {
+//        if (userLanguage === "es") {
+//            userLanguage = "en"
+//        } else {
+//            userLanguage = "es"
+//        }
+//    }
+//    for (let i = 0; i <= Object.keys(languageText.es).length-1; i++) {
+//        if (userLanguage === "es") {
+//            document.getElementById(Object.keys(languageText.es)[i]).textContent = Object.values(languageText.es)[i]
+//        } else {
+//            document.getElementById(Object.keys(languageText.en)[i]).textContent = Object.values(languageText.en)[i]
+//        }
+//    }
+//    switchLanguage = 1
+//}
