@@ -103,23 +103,3 @@ function setLanguage(targetLanguage) {
         document.getElementById("languageButton").onclick = function() {setLanguage('es')};
     }
 }
-
-
-
-//function language() {
-//    if (switchLanguage === 1) {
-//        if (userLanguage === "es") {
-//            userLanguage = "en"
-//        } else {
-//            userLanguage = "es"
-//        }
-//    }
-//    for (let i = 0; i <= Object.keys(languageText.es).length-1; i++) {
-//        if (userLanguage === "es") {
-//            document.getElementById(Object.keys(languageText.es)[i]).textContent = Object.values(languageText.es)[i]
-//        } else {
-//            document.getElementById(Object.keys(languageText.en)[i]).textContent = Object.values(languageText.en)[i]
-//        }
-//    }
-//    switchLanguage = 1
-//}
