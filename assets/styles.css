@@ -25,6 +25,7 @@ body {
         background-color: #0000;
         backdrop-filter: blur(0);
         box-shadow: none;
+        filter: blur(8px);
     }
 }
 
@@ -52,7 +53,7 @@ body {
     transform: translate(-50%, -50%);
     display: flex;
     flex-wrap: wrap;
-    animation: scale 0.5s cubic-bezier(.19,.62,.17,.99);
+    animation: scale 0.8s cubic-bezier(.19,.62,.17,.99);
 }
 .box {
     background-color: #0005;
@@ -61,10 +62,10 @@ body {
     box-shadow: 0 4px 10px 0 #0007;
     box-sizing: border-box;
     backdrop-filter: blur(16px);
-    animation: normalize 0.4s cubic-bezier(.19,.62,.17,.99);
+    animation: normalize 0.9s cubic-bezier(.19,.62,.17,.99);
 }
 .box > * {
-    animation: blur 0.5s cubic-bezier(.19,.62,.17,.99);
+    animation: blur 0.8s cubic-bezier(.19,.62,.17,.99);
 }
 
 img {
@@ -189,8 +190,9 @@ hr {
     cursor: pointer;
 }
 #languageButton > img {
+    width: 100%;
+    padding: 6px;
     opacity: 0.75;
-    scale: 0.85;
     filter: drop-shadow(0 4px 2px #0005);
     border-radius: 0;
     transition: 0.1s ease;
