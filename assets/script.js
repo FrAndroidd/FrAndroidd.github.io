@@ -71,14 +71,14 @@ function show() { // This is run when the background is loaded
 // Change language
 const languageText = {
     "es": {
-        "lang.age": "17 años",
+        "lang.age": "18 años",
         "lang.bio1": "Hola, soy FrAndroid, un aficionado al software, programador principiante y diseñador de UI/UX como hobby",
         "lang.bio2": "Actualmente tengo conocimientos relativamente avanzados sobre Windows y Linux",
         "lang.bio3": "Sé HTML y CSS, programar en Batch y JavaScript, y estoy aprendiendo otros lenguajes",
         "lang.backgroundBy": "Fondo por"
     },
     "en": {
-        "lang.age": "17 years old",
+        "lang.age": "18 years old",
         "lang.bio1": "Hi, I'm FrAndroid, a software enthusiast, beginner programmer and UI/UX designer as a hobby",
         "lang.bio2": "I currently have a somewhat advanced knowledge about Windows and Linux",
         "lang.bio3": "I know HTML and CSS, coding in Batch and JavaScript, and I'm learning other programming languages",
